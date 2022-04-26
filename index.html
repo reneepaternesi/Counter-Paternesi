@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script defer src="./app.js"></script>
+    <link rel="stylesheet" href="./styles.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <div id="app" class="container-fluid">
+        <div class="content">
+            <h1 class="heading text-center mb-3">Counter</h1>
+            <div class="row">
+                <div class="col-2 text-center">
+                    <button type="button" class="btn btn-info ctrl-btn" @click="decrease()" :disabled="isBtnDisabled"> << </button>
+                </div>
+                <div class="col-3 text-center">
+                    <input class="form-control text-center counter" type="text"  v-model="counter" readonly>
+                </div>
+                <div class="col-2 text-center">
+                    <button type="button" class="btn btn-info ctrl-btn" @click="increase()"> >></button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="btn-group mt-4" data-toggle="buttons">
+                    <label class="btn btn-info">
+                      <input type="checkbox" checked v-model="negativeAllowed" @click="onClick()"> Negative Numbers Allowed
+                    </label>
+                  </div>
+            </div>
+        </div>
+        <div id="bg">
+            <img :src="backgroundImg" alt="">
+        </div>
+    </div>
+</body>
+</html>
